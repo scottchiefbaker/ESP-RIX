@@ -1,5 +1,3 @@
-//#define RIX_DISABLE
-
 #include <esp-rix.h>
 
 void setup() {
