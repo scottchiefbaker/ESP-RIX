@@ -1,10 +1,7 @@
 # Remote Information eXchange
 
 [![ESP8266](https://img.shields.io/badge/ESP-8266-000000.svg?longCache=true&style=flat&colorA=CC101F)](https://www.espressif.com/en/products/socs/esp8266)
-
 [![ESP32](https://img.shields.io/badge/ESP-32-000000.svg?longCache=true&style=flat&colorA=CC101F)](https://www.espressif.com/en/products/socs/esp32)
-[![ESP32](https://img.shields.io/badge/ESP-32S2-000000.svg?longCache=true&style=flat&colorA=CC101F)](https://www.espressif.com/en/products/socs/esp32-s2)
-[![ESP32](https://img.shields.io/badge/ESP-32C3-000000.svg?longCache=true&style=flat&colorA=CC101F)](https://www.espressif.com/en/products/socs/esp32-c3)
 
 **R**emote **I**nformation e**X**change adds remote logging and debugging
 capabilities to your ESP based Arduino projects. This can be useful if
@@ -23,18 +20,18 @@ Include the RIX library
 
 Listen for RIX calls at the end of your `loop()` function
 
-void loop() {
-    // Other loop code here
+    void loop() {
+        // Other loop code here
 
-    // Rix supports 7 levels of debug messages
-    rix_1("This is a LEVEL 1 message");
-    rix_7("This is a LEVEL 7 message");
+        // Rix supports 7 levels of debug messages
+        rix_1("This is a LEVEL 1 message");
+        rix_7("This is a LEVEL 7 message");
 
-    // Rix also supports printf style messages
-    rix_5("MCU Uptime: %d minutes", millis() / 1000 / 60);
+        // Rix also supports printf style messages
+        rix_5("MCU Uptime: %d minutes", millis() / 1000 / 60);
 
-    handle_rix();
-}
+        handle_rix();
+    }
 
 On a machine that shares the same WiFi as your ESP you simply
 `telnet` to your ESP's IP address to view the messages.
@@ -78,4 +75,4 @@ changes to your code.
 # Inspired by
 
 RIX was inspired by Joao Lopes' [RemoteDebug](https://github.com/JoaoLopesF/RemoteDebug)
-which appears to be abandonned and will no longer compile on modern boards.
+which appears to be abandonned.
