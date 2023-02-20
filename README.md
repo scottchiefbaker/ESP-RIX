@@ -33,8 +33,8 @@ Listen for RIX calls at the end of your `loop()` function
         handle_rix();
     }
 
-On a machine that shares the same WiFi as your ESP you simply
-`telnet` to your ESP's IP address to view the messages.
+On a machine that shares the same WiFi as your ESP you can `telnet` to your
+ESP's IP address to view the messages.
 
 # Library options
 
