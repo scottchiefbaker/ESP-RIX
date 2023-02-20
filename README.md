@@ -16,7 +16,7 @@ Clone this repo to your Arduino libraries directory. On Linux this is
 
 Include the RIX library
 
-    #include <WebOTA.h>
+    #include <esp-rix.h>
 
 Listen for RIX calls at the end of your `loop()` function
 
