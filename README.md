@@ -1,9 +1,15 @@
 # Remote Information eXchange
 
-<!-- Icons from: https://shields.io/ -->
+<!-- 
+Icons from: https://shields.io/ 
+
+https://img.shields.io/badge/ESP-32-success
+https://img.shields.io/badge/ESP-8266-success
+https://img.shields.io/badge/Arduino-AVR-success?logo=arduino&logoWidth=18
+-->
 ![ARDUINO-AVR](https://user-images.githubusercontent.com/3429760/220426704-0a102a4f-f661-4fa8-a3cc-b37af02a35d4.svg)
 ![ESP8266](https://user-images.githubusercontent.com/3429760/220426614-77c8aa30-325e-4e14-8bb9-94daf03f68fc.svg)
-![ESP32](https://user-images.githubusercontent.com/3429760/220426615-32b8a6a5-8afe-4c5d-807f-c3f2e9814ed3.svg)
+![ESP 32](https://user-images.githubusercontent.com/3429760/220428060-b08bb5ee-3a5c-4061-97ab-2c8977045aa2.svg)
 
 **R**emote **I**nformation e**X**change adds remote logging and debugging
 capabilities to your ESP based Arduino projects. This can be useful if
