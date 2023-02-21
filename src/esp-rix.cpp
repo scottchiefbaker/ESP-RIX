@@ -6,6 +6,7 @@
 
 const char* LEVEL_NAMES[8] = {"NONE", "ALERT", "CRITICAL", "ERROR", "WARNING", "NOTICE", "INFORMATION", "DEBUG"};
 
+const char* RIX_VERSION = "0.1";
 unsigned long prev_time = 0; // Millis when the last log entry was sent
 int LOG_LEVEL           = 7; // Starting log level
 int RIX_COLOR           = 1; // Color enabled/disabled

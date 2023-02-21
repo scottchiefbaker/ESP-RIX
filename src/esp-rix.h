@@ -1,5 +1,3 @@
-#define RIX_VERSION 0.1
-
 #if defined(ESP8266)
 	#include <ESP8266WiFi.h>
 #elif defined(ESP32)
