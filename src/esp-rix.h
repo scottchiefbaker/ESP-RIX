@@ -58,6 +58,7 @@ void rix_delay(unsigned int ms);
 int  rix_color(int num);
 int  rix_init_wifi(const char *ssid, const char *password);
 void rix_tcp_port(int num);
+String rix_ip2string(IPAddress ip);
 
 #endif
 

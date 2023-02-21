@@ -51,9 +51,35 @@ void show_help(WiFiClient client) {
 
 // Send the Telnet banner
 void send_banner(WiFiClient client) {
-	client.println("Welcome to Remote Information eXchange!");
-	client.println("=======================================");
-	client.printf("MCU Uptime: %d minutes\r\n\r\n", millis() / 1000 / 60);
+	String ipaddr  = rix_ip2string(WiFi.localIP());
+	String mac     = WiFi.macAddress();
+	String sdk_ver = ESP.getSdkVersion();
+	int free_mem   = ESP.getFreeHeap();
+
+	#if   defined(ESP32)
+	const char* board_type = "ESP32";
+	#elif defined(ESP8266)
+	const char* board_type = "ESP8266";
+	#else
+	const char* board_type = "Unknown";
+	#endif
+
+	// Make the header WHITE
+	if (RIX_COLOR) {
+		client.print("\x1B[1m");       // Bold
+		client.print("\x1B[38;5;15m"); // White
+	}
+
+	client.printf("Welcome to Remote Information eXchange - version %s\r\n", RIX_VERSION);
+	client.printf("IP: %s / MAC: %s\r\n", ipaddr.c_str(), mac.c_str());
+	client.printf("Free Mem: %d / ESP SDK: %s / %s\r\n", free_mem, sdk_ver.c_str(), board_type);
+	//client.printf("MCU Uptime: %d minutes\r\n", millis() / 1000 / 60);
+	client.println("=======================================================\r\n");
+
+	// Reset the color
+	if (RIX_COLOR) {
+		client.print("\x1B[0m");
+	}
 
 	show_help(client);
 }
