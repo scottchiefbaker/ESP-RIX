@@ -44,7 +44,11 @@ Enable/disable color in output
 
 Set the initial output logging level
 
-    rix_log_level(4); // Set the initial log level (default: 7)
+    rix_log_level(4); // Default: 7
+
+Change the TCP port that RIX listens on
+
+    rix_tcp_port(2300); // Default: 23
 
 Using `delay()` in your scripts may cause RIX to be less responsive. A
 `rix_delay()` method has been added as a drop-in replacement to keep your

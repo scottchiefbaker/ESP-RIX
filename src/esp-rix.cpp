@@ -9,14 +9,9 @@ const char* LEVEL_NAMES[8] = {"NONE", "ALERT", "CRITICAL", "ERROR", "WARNING", "
 unsigned long prev_time = 0; // Millis when the last log entry was sent
 int LOG_LEVEL           = 7; // Starting log level
 int RIX_COLOR           = 1; // Color enabled/disabled
+int RIX_TCP_PORT        = 23;
 
-WiFiServer TelnetServer(23);
 WiFiClient client;
-
-void init_rix() {
-	TelnetServer.begin();
-	TelnetServer.setNoDelay(true);
-}
 
 // Send the Telnet banner
 void local_echo(WiFiClient client, int num) {
@@ -77,11 +72,14 @@ int rix_color(int num) {
 // Outputs log lines to connected clients
 void handle_rix() {
 	static bool first = 1;
+	static WiFiServer TelnetServer(RIX_TCP_PORT);
 
 	if (first) {
-		init_rix();
+		TelnetServer.begin();
+		TelnetServer.setNoDelay(true);
 		first = 0;
 	}
+
 
 	// Already connected telnet session
 	if (client && client.connected()) {
@@ -253,6 +251,11 @@ void __debug_print(const char* function_name, int level, const char* format, ...
 
 	// Save this for the next time
 	prev_time = millis();
+}
+
+// Set the TCP port to use
+void rix_tcp_port(int port) {
+	RIX_TCP_PORT = port;
 }
 
 // Change the logging level for a connected client

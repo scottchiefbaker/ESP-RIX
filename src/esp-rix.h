@@ -27,9 +27,9 @@
 #define handle_rix()
 #define rix_log_level(x)
 #define rix_color(x) (0)
-#define init_rix()
 #define rix_delay(ms) delay(ms)
 #define rix_init_wifi(x, y) (0)
+#define rix_tcp_port()
 
 ///////////////////////////////////////////////////////////////////////
 // The library is enabled so business as usual
@@ -55,11 +55,11 @@
 
 void __debug_print(const char* func, int level, const char* format, ...);
 void handle_rix();
-void init_rix();
 void rix_log_level(int level);
 void rix_delay(unsigned int ms);
 int  rix_color(int num);
 int  rix_init_wifi(const char *ssid, const char *password);
+void rix_tcp_port(int num);
 
 #endif
 
