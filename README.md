@@ -76,7 +76,7 @@ project responsive.
 rix_delay(500); // Wait 500 ms
 ```
 
-A simple function was added to make connecting to your WiFi simple:
+RIX has a function to make connecting to your WiFi simple:
 
 ```C
 int ok = rix_init_wifi("MySSID", "SekritPassword");
