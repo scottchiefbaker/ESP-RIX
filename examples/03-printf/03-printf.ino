@@ -3,7 +3,7 @@
 void setup() {
 	Serial.begin(115200);
 
-	int ok = rix_init_wifi("YourSSID", "SekritPass");\
+	int ok = rix_init_wifi("YourSSID", "SekritPass");
 }
 
 void loop() {
