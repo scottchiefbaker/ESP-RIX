@@ -29,6 +29,7 @@ void local_echo(WiFiClient client, int num) {
 // Send the Telnet banner
 void show_help(WiFiClient client) {
 	client.println("c) Toggle color on or off");
+	client.println("m) Show free memory");
 	client.println("q) Quit and logout of ESP");
 	client.println("r) Reboot MCU");
 	client.println("u) Print MCU uptime");
@@ -158,6 +159,10 @@ void handle_rix() {
 				client.printf("Enbabling color\r\n");
 				rix_color(1);
 			}
+		// Free memory
+		} else if (strcmp(str, "m") == 0) {
+			int free_mem = ESP.getFreeHeap();
+			client.printf("Free Memory: %d\r\n", free_mem);
 		// Uptime
 		} else if (strcmp(str, "u") == 0) {
 			client.printf("Uptime: %0.1f minutes\r\n", millis() / float(60000));
