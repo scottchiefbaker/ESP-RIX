@@ -1,7 +1,7 @@
 # Remote Information eXchange
 
-<!-- 
-Icons from: https://shields.io/ 
+<!--
+Icons from: https://shields.io/
 
 https://img.shields.io/badge/ESP-32-success
 https://img.shields.io/badge/ESP-8266-success
@@ -82,11 +82,9 @@ A simple function was added to make connecting to your WiFi simple:
 int ok = rix_init_wifi("MySSID", "SekritPassword");
 ```
 
-# Backwards compatibility
+# Disabling RIX
 
-Care was taken to make sure the library "fails gracefully" when disabled. You
-may want to disable debugging entirely when your project is complete. This can
-be accomplished by adding:
+When you're done debugging you can disable RIX entirely by adding:
 
 ```C
 # define RIX_DISABLE
@@ -96,9 +94,11 @@ before the include line. This will make all the `rix_*` calls no-ops, and
 disable logging. This means you can leave all your setup and logging calls in
 your code and simply disable the library at compile time.
 
-**Note:** On non-ESP boards RIX is automatically disabled. This allows you to
-test and debug on an ESP board, and then compile on an Arduino Nano with no
-changes to your code.
+# Backwards compatibility
+
+On non-ESP boards RIX is **automatically** disabled. This allows you to test
+and debug on an ESP board, and then compile on an Arduino Nano with no changes
+to your code.
 
 # Inspired by
 
