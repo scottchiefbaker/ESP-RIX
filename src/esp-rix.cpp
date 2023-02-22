@@ -169,6 +169,7 @@ void handle_rix() {
 		// Reboot/reset
 		} else if (strcmp(str, "r") == 0) {
 			client.printf("Rebooting...\r\n");
+			client.stop(); // Disconnect the telnet session
 			ESP.restart();
 		// It's a number 1 - 7 we set the log level
 		} else if (is_level_number) {
