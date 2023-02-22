@@ -263,8 +263,8 @@ void __debug_print(const char* function_name, int level, const char* format, ...
 	snprintf(ms_str, 20, "(%04dms) ", diff);
 
 	// Function name string
-	char func_str[20] = "";
-	snprintf(func_str, 20, "(F: %s) ", function_name);
+	char func_str[100] = "";
+	snprintf(func_str, 100, "(F: %s) ", function_name);
 
 	// Send the color and text data to the telnet client
 	if (RIX_COLOR) {
