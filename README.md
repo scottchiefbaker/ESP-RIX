@@ -1,4 +1,4 @@
-# Remote Information eXchange
+# 🔭 Remote Information eXchange
 
 <!--
 Icons from: https://shields.io/
@@ -15,12 +15,12 @@ https://img.shields.io/badge/Arduino-AVR-success?logo=arduino&logoWidth=18
 capabilities to your ESP based Arduino projects. This can be useful if
 your project is in an inaccessible location, and serial isn't available.
 
-# Installation
+# 📦 Installation
 
 Clone this repo to your Arduino libraries directory. On Linux this is
 `~/Arduino/libraries/`
 
-# Usage
+# ✨ Usage
 
 Include the RIX library
 
@@ -48,7 +48,7 @@ void loop() {
 On a machine that shares the same WiFi as your ESP you can `telnet` to your
 ESP's IP address to view the messages.
 
-# Library options
+# ⚙️ Library options
 
 Enable/disable color in output
 
@@ -82,7 +82,7 @@ RIX has a function to make connecting to your WiFi simple:
 int ok = rix_init_wifi("MySSID", "SekritPassword");
 ```
 
-# Disabling RIX
+# 🚫 Disabling RIX
 
 When you're done debugging you can disable RIX entirely by adding:
 
@@ -94,13 +94,13 @@ before the include line. This will make all the `rix_*` calls no-ops, and
 disable logging. This means you can leave all your setup and logging calls in
 your code and simply disable the library at compile time.
 
-# Backwards compatibility
+# ◀️ Backwards compatibility
 
 On non-ESP boards RIX is **automatically** disabled. This allows you to test
 and debug on an ESP board, and then compile on an Arduino Nano with no changes
 to your code.
 
-# Inspired by
+# 🤹 Inspired by
 
 RIX was inspired by Joao Lopes' [RemoteDebug](https://github.com/JoaoLopesF/RemoteDebug)
 which appears to be abandonned.
